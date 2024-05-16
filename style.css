@@ -1,0 +1,83 @@
+body {
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  gap: 20px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+.bakerloo {
+  background-color: #b26300;
+}
+
+.central {
+  background-color: #dc241f;
+}
+
+.circle {
+  background-color: #ffc80a;
+}
+
+.district {
+  background-color: #007d32;
+}
+
+.hammersmith-city {
+  background-color: #f589a6;
+}
+
+.metropolitan {
+  background-color: #9b0058;
+}
+
+.northern {
+  background-color: #000000;
+}
+
+.piccadilly {
+  background-color: #0019a8;
+}
+
+.jubilee {
+  background-color: #838d93;
+}
+
+.victoria {
+  background-color: #039be5;
+}
+
+.waterloo {
+  background-color: #76d0bd;
+}
+
+.line-name {
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  font-weight: bold;
+  color: white;
+}
+
+.line-name.circle, .line-name.hammersmith-city, .line-name.jubilee, .line-name.waterloo {
+  color: #000;
+}

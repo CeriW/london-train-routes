@@ -2,6 +2,7 @@ type LineName = 'bakerloo' | 'central' | 'circle';
 import { stations, Station } from './stations.type';
 import Line from './line.type';
 import lines from './lines';
+import { convertToSlug } from './helpers';
 
 const output = document.querySelector('#output')!;
 
@@ -46,10 +47,12 @@ sameLineButton?.addEventListener('click', () => {
   const sharedLines = getSharedLines(start, end);
 
   if (sharedLines.length > 0) {
-    output.innerHTML = `${start} and ${end} are both on the following lines:`;
+    let outputHTML = `${start} and ${end} both share the following lines: <ul>`;
     sharedLines.forEach((line) => {
-      output.innerHTML += line;
+      outputHTML += `<li class="${convertToSlug(line)} line-name">${line}</li>`;
     });
+    outputHTML += '</ul>';
+    output.innerHTML = outputHTML;
   } else {
     output.innerHTML = `${start} and ${end} do not share any lines`;
   }

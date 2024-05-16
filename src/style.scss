@@ -1,0 +1,54 @@
+$lines: (
+  'bakerloo': #b26300,
+  'central': #dc241f,
+  'circle': #ffc80a,
+  'district': #007d32,
+  'hammersmith-city': #f589a6,
+  'metropolitan': #9b0058,
+  'northern': #000000,
+  'piccadilly': #0019a8,
+  'jubilee': #838d93,
+  'victoria': #039be5,
+  'waterloo': #76d0bd,
+);
+
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  gap: 20px;
+  text-align: center;
+}
+
+ul {
+  padding: 0;
+}
+
+@each $name, $color in $lines {
+  .#{$name} {
+    background-color: $color;
+  }
+}
+
+.line-name {
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 5px 5px 0;
+  font-weight: bold;
+  color: white;
+}
+
+.line-name {
+  &.circle,
+  &.hammersmith-city,
+  &.jubilee,
+  &.waterloo {
+    color: #000;
+  }
+}
