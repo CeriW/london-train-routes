@@ -3,6 +3,8 @@ import { stations, Station } from './stations.type';
 import Line from './line.type';
 import lines from './lines';
 
+const output = document.querySelector('#output')!;
+
 // Return an array of lines which have both the beginning and end stations on without needing to change
 const getSharedLines = (start: Station, end: Station) => {
   const sharedLines: string[] = [];
@@ -33,5 +35,18 @@ document.body.append(endDropdown);
 // Set up the testing button
 const sameLineButton = document.querySelector('#test-button');
 sameLineButton?.addEventListener('click', () => {
-  console.log(getSharedLines(startDropdown.value as Station, endDropdown.value as Station));
+  const start = startDropdown.value as Station;
+  const end = endDropdown.value as Station;
+  console.log(getSharedLines(start, end));
+
+  const sharedLines = getSharedLines(start, end);
+
+  if (sharedLines.length > 0) {
+    output.innerHTML = `${start} and ${end} are both on the following lines:`;
+    sharedLines.forEach((line) => {
+      output.innerHTML += line;
+    });
+  } else {
+    output.innerHTML = `${start} and ${end} do not share any lines`;
+  }
 });

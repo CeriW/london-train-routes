@@ -1,5 +1,5 @@
 const lines = {
-  bakerloo: {
+  Bakerloo: {
     stops: [
       'Harrow & Wealdstone',
       'Kenton',
@@ -28,7 +28,7 @@ const lines = {
       'Elephant & Castle',
     ],
   },
-  circle: {
+  Circle: {
     stops: [
       'Hammersmith',
       'Goldhawk Road',
@@ -67,7 +67,7 @@ const lines = {
       'Bayswater',
     ],
   },
-  northern: {
+  Northern: {
     stops: [
       'High Barnet',
       'Totteridge & Whetstone',
@@ -127,7 +127,7 @@ const lines = {
       'Elephant & Castle',
     ],
   },
-  metropolitan: {
+  Metropolitan: {
     stops: [
       'Aldgate',
       'Liverpool Street',
@@ -168,7 +168,7 @@ const lines = {
       'Baker Street',
     ],
   },
-  jubilee: {
+  Jubilee: {
     stops: [
       'Stanmore',
       'Canons Park',
@@ -199,7 +199,7 @@ const lines = {
       'Stratford',
     ],
   },
-  hammersmithCity: {
+  'Hammersmith & City': {
     stops: [
       'Hammersmith',
       'Goldhawk Road',
@@ -232,7 +232,7 @@ const lines = {
       'Barking',
     ],
   },
-  district: {
+  District: {
     stops: [
       'Upminster',
       'Upminster Bridge',
@@ -306,7 +306,7 @@ const lines = {
       'South Kensington',
     ],
   },
-  central: {
+  Central: {
     stops: [
       'West Ruislip',
       'Ruislip Gardens',
