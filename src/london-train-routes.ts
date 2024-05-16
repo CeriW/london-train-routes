@@ -45,15 +45,24 @@ sameLineButton?.addEventListener('click', () => {
   }
 
   const sharedLines = getSharedLines(start, end);
+  console.log(sharedLines);
 
-  if (sharedLines.length > 0) {
-    let outputHTML = `${start} and ${end} both share the following lines: <ul>`;
-    sharedLines.forEach((line) => {
-      outputHTML += `<li class="${convertToSlug(line)} line-name">${line}</li>`;
-    });
-    outputHTML += '</ul>';
-    output.innerHTML = outputHTML;
-  } else {
-    output.innerHTML = `${start} and ${end} do not share any lines`;
+  console.log(sharedLines);
+  switch (sharedLines.length) {
+    case 0:
+      output.innerHTML = `${start} and ${end} do not share any lines`;
+      break;
+    case 1:
+      output.innerHTML = `${start} and ${end} are both on the <span class="${convertToSlug(
+        sharedLines[0]
+      )} line-name">${sharedLines[0]}</span> line`;
+      break;
+    default:
+      let outputHTML = `${start} and ${end} both share the following lines: <ul>`;
+      sharedLines.forEach((line) => {
+        outputHTML += `<li class="${convertToSlug(line)} line-name">${line}</li>`;
+      });
+      outputHTML += '</ul>';
+      output.innerHTML = outputHTML;
   }
 });

@@ -169,15 +169,22 @@ sameLineButton === null || sameLineButton === void 0 ? void 0 : sameLineButton.a
     return;
   }
   var sharedLines = getSharedLines(start, end);
-  if (sharedLines.length > 0) {
-    var outputHTML = "".concat(start, " and ").concat(end, " both share the following lines: <ul>");
-    sharedLines.forEach(function (line) {
-      outputHTML += "<li class=\"".concat((0,_helpers__WEBPACK_IMPORTED_MODULE_3__.convertToSlug)(line), " line-name\">").concat(line, "</li>");
-    });
-    outputHTML += '</ul>';
-    output.innerHTML = outputHTML;
-  } else {
-    output.innerHTML = "".concat(start, " and ").concat(end, " do not share any lines");
+  console.log(sharedLines);
+  console.log(sharedLines);
+  switch (sharedLines.length) {
+    case 0:
+      output.innerHTML = "".concat(start, " and ").concat(end, " do not share any lines");
+      break;
+    case 1:
+      output.innerHTML = "".concat(start, " and ").concat(end, " are both on the <span class=\"").concat((0,_helpers__WEBPACK_IMPORTED_MODULE_3__.convertToSlug)(sharedLines[0]), " line-name\">").concat(sharedLines[0], "</span> line");
+      break;
+    default:
+      var outputHTML = "".concat(start, " and ").concat(end, " both share the following lines: <ul>");
+      sharedLines.forEach(function (line) {
+        outputHTML += "<li class=\"".concat((0,_helpers__WEBPACK_IMPORTED_MODULE_3__.convertToSlug)(line), " line-name\">").concat(line, "</li>");
+      });
+      outputHTML += '</ul>';
+      output.innerHTML = outputHTML;
   }
 });
 }();
