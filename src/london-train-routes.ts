@@ -1,5 +1,5 @@
 type LineName = 'bakerloo' | 'central' | 'circle';
-import Station from './stations.type';
+import { stations, Station } from './stations.type';
 import Line from './line.type';
 import lines from './lines';
 
@@ -19,3 +19,8 @@ const getSharedLines = (start: Station, end: Station) => {
 document.querySelector('#test-button')?.addEventListener('click', () => {
   console.log(getSharedLines('Waterloo', 'Baker Street'));
 });
+
+for (const station of stations) {
+  console.log(station);
+}
+// document.body.appendChild(fromDropdown);
