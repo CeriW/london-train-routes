@@ -16,11 +16,22 @@ const getSharedLines = (start: Station, end: Station) => {
   return sharedLines;
 };
 
-document.querySelector('#test-button')?.addEventListener('click', () => {
-  console.log(getSharedLines('Waterloo', 'Baker Street'));
-});
+// Set up the HTML on the page
+const startDropdown = document.createElement('select');
+const endDropdown = document.createElement('select');
 
+let optionHTML = '';
 for (const station of stations) {
-  console.log(station);
+  optionHTML += `<option value="${station}">${station}</option>`;
 }
-// document.body.appendChild(fromDropdown);
+
+startDropdown.innerHTML = optionHTML;
+endDropdown.innerHTML = optionHTML;
+document.body.append(startDropdown);
+document.body.append(endDropdown);
+
+// Set up the testing button
+const sameLineButton = document.querySelector('#test-button');
+sameLineButton?.addEventListener('click', () => {
+  console.log(getSharedLines(startDropdown.value as Station, endDropdown.value as Station));
+});
