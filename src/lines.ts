@@ -1,7 +1,3 @@
-type LineName = 'bakerloo' | 'central' | 'circle';
-import Station from './stations.type';
-import Line from './line.type';
-
 const lines = {
   bakerloo: {
     stops: [
@@ -361,27 +357,4 @@ const lines = {
   },
 };
 
-const isSameLine = (start: Station, end: Station) => {
-  // Object.keys(lines).forEach((line) => {
-  //   console.log(line + ': ' + lines[line].stops);
-  // });
-
-  const sharedLines: string[] = [];
-
-  Object.keys(lines).forEach((line) => {
-    // console.log(line);
-
-    // console.log(line + ': ' + lines[line].stops);
-    if (lines[line].stops.includes(start) && lines[line].stops.includes(end)) {
-      sharedLines.push(line);
-    }
-  });
-
-  return sharedLines;
-};
-
-// console.log(isSameLine('Waterloo', 'Baker Street'));
-
-document.querySelector('#test-button')?.addEventListener('click', () => {
-  console.log(isSameLine('Waterloo', 'Baker Street'));
-});
+export default lines;
