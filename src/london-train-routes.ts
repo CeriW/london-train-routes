@@ -11,7 +11,7 @@ const getSharedLines = (start: Station, end: Station) => {
   const sharedLines: string[] = [];
 
   Object.keys(lines).forEach((line) => {
-    if (lines[line].stops.includes(start) && lines[line].stops.includes(end)) {
+    if (lines[line].includes(start) && lines[line].includes(end)) {
       sharedLines.push(line);
     }
   });
