@@ -99,7 +99,9 @@ var _document$querySelect;
 
 
 
-var isSameLine = function isSameLine(start, end) {
+
+// Return an array of lines which have both the beginning and end stations on without needing to change
+var getSharedLines = function getSharedLines(start, end) {
   var sharedLines = [];
   Object.keys(_lines__WEBPACK_IMPORTED_MODULE_2__["default"]).forEach(function (line) {
     if (_lines__WEBPACK_IMPORTED_MODULE_2__["default"][line].stops.includes(start) && _lines__WEBPACK_IMPORTED_MODULE_2__["default"][line].stops.includes(end)) {
@@ -109,7 +111,7 @@ var isSameLine = function isSameLine(start, end) {
   return sharedLines;
 };
 (_document$querySelect = document.querySelector('#test-button')) === null || _document$querySelect === void 0 ? void 0 : _document$querySelect.addEventListener('click', function () {
-  console.log(isSameLine('Waterloo', 'Baker Street'));
+  console.log(getSharedLines('Waterloo', 'Baker Street'));
 });
 }();
 /******/ })()
