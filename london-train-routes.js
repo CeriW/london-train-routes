@@ -160,7 +160,10 @@ var sameLineButton = document.querySelector('#test-button');
 sameLineButton === null || sameLineButton === void 0 ? void 0 : sameLineButton.addEventListener('click', function () {
   var start = startDropdown.value;
   var end = endDropdown.value;
-  console.log(getSharedLines(start, end));
+  if (start === end) {
+    output.innerHTML = 'Start and end points must be different';
+    return;
+  }
   var sharedLines = getSharedLines(start, end);
   if (sharedLines.length > 0) {
     output.innerHTML = "".concat(start, " and ").concat(end, " are both on the following lines:");

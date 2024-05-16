@@ -37,7 +37,11 @@ const sameLineButton = document.querySelector('#test-button');
 sameLineButton?.addEventListener('click', () => {
   const start = startDropdown.value as Station;
   const end = endDropdown.value as Station;
-  console.log(getSharedLines(start, end));
+
+  if (start === end) {
+    output.innerHTML = 'Start and end points must be different';
+    return;
+  }
 
   const sharedLines = getSharedLines(start, end);
 
