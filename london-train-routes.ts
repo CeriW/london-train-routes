@@ -1,4 +1,6 @@
 type LineName = 'bakerloo' | 'central' | 'circle';
+import Station from './stations.type';
+import Line from './line.type';
 
 const lines = {
   bakerloo: {
@@ -359,7 +361,7 @@ const lines = {
   },
 };
 
-const isSameLine = (start, end) => {
+const isSameLine = (start: Station, end: Station) => {
   // Object.keys(lines).forEach((line) => {
   //   console.log(line + ': ' + lines[line].stops);
   // });
